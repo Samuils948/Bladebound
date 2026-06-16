@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://7bydbfbtja15"]
+
+[ext_resource type="FontFile" uid="uid://be3qlqklsnvux" path="res://PixelifySans-VariableFont_wght.ttf" id="1_06t4h"]
+[ext_resource type="Script" uid="uid://d2ej0geottxgg" path="res://main_menu.gd" id="1_fu7sn"]
+[ext_resource type="FontFile" uid="uid://b665g7y1rxycv" path="res://effects/PixelifySans-VariableFont_wght.ttf" id="2_7vrkn"]
+
+[node name="MainMenu" type="Control" unique_id=1979968123]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_fu7sn")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1811358761]
+layout_mode = 0
+offset_right = 320.0
+offset_bottom = 182.0
+color = Color(0, 0, 0.17254902, 1)
+
+[node name="TitleLabel" type="Label" parent="." unique_id=895907039]
+layout_mode = 0
+offset_top = -19.0
+offset_right = 319.0
+offset_bottom = 164.0
+theme_override_fonts/font = ExtResource("1_06t4h")
+theme_override_font_sizes/font_size = 48
+text = "Bladebound"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PlayButton" type="Button" parent="." unique_id=916799461]
+layout_mode = 0
+offset_left = 119.0
+offset_top = 106.0
+offset_right = 186.0
+offset_bottom = 151.0
+theme_override_fonts/font = ExtResource("2_7vrkn")
+theme_override_font_sizes/font_size = 30
+text = "Play"
+
+[connection signal="pressed" from="PlayButton" to="." method="_on_play_button_pressed"]

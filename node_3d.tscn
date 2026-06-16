@@ -1,0 +1,473 @@
+[gd_scene format=4 uid="uid://brqp647t355hd"]
+
+[ext_resource type="PackedScene" uid="uid://celsu1s6d1liy" path="res://player/player.tscn" id="1_a202f"]
+[ext_resource type="Script" uid="uid://cu6pv3uailf32" path="res://node_3d.gd" id="1_cdqbm"]
+[ext_resource type="Texture2D" uid="uid://dt0gc4mtbxtk2" path="res://world/grass_background.png" id="1_noarx"]
+[ext_resource type="TileSet" uid="uid://ddi3pydnebswp" path="res://world/dirt_tile_set.tres" id="2_wc5p8"]
+[ext_resource type="PackedScene" uid="uid://pal71y3n2g4k" path="res://bush.tscn" id="3_a0tk4"]
+[ext_resource type="TileSet" uid="uid://bpot1mdppxdhi" path="res://world/cliff_tile_set.tres" id="3_jsk3o"]
+[ext_resource type="PackedScene" uid="uid://ov3y3fx6va2c" path="res://tree.tscn" id="4_r3fl7"]
+[ext_resource type="PackedScene" uid="uid://bxsqqr7qe423x" path="res://world/grass.tscn" id="7_4arys"]
+[ext_resource type="PackedScene" uid="uid://bbcabvwcdgiwt" path="res://enemies/bat_enemy.tscn" id="8_jsk3o"]
+[ext_resource type="PackedScene" uid="uid://d0a53dncak71e" path="res://ui/hearts_ui.tscn" id="9_4arys"]
+[ext_resource type="AudioStream" uid="uid://csd0hr1sw7qkf" path="res://music_and_sounds/music.mp3" id="10_6iypd"]
+[ext_resource type="PackedScene" uid="uid://yrlc0cjhyv7i" path="res://pauser.tscn" id="11_tereu"]
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_tereu"]
+vertices = PackedVector2Array(434.21094, 294, 568, 291, 612, 291, 612, 311, 568, 311, 432.03906, 302.10938, 260, 183, 195.78125, 183, 203.10938, 181.03906, 186.89063, 181.03906, 194.21875, 183, 164, 183, 184, 291, 198.21875, 291, 190.89063, 292.96094, 207.10938, 292.96094, 199.78125, 291, 216, 291, 440, 99, 466.47656, 99, 462.89063, 99.96094, 479.10938, 99.96094, 475.52344, 99, 516, 99, 191.03906, 383.10938, 193.21094, 375, 491.89063, 348.03906, 500, 350.21094, 568, 407, 632, 259, 664, 259, 664, 355, 644, 343, 612, 151, 632, 215, 440, 259, 516, 259, 432.03906, 285.89063, -18.789063, 349, 10.9609375, 344.10938, 16.890625, 350.03906, -20.960938, 357.10938, 132, 99, 132, 64.14844, 134.89063, 67.03906, 134.89063, 38.960938, 132, 41.851563, 132, -9, 68, -93, 183.85156, -93, 177.96094, -87.109375, 206.03906, -87.109375, 200.14844, -93, 238.85156, -93, 235.96094, -90.109375, 264.03906, -90.109375, 261.14844, -93, 472, -93, 322, -87.21094, 228, 247, 228, 242.14844, 229.89063, 244.03906, 164, 259, 164, 244.14844, 166.89063, 247.03906, 183.10938, 247.03906, 184, 246.14844, 485.03906, 105.890625, 209.03906, 175.10938, 456.96094, 105.890625, 180.96094, 175.10938, 485.96094, 342.10938, 191.03906, 366.89063, 213.03906, 298.89063, 568, -9, 568, 131, 536, 151, 516, -9, 568, 227, 536, 227, 516, 215, 184.96094, 298.89063, 132, 323, 426.10938, 279.96094, 164, 151, 178.78906, 167, 180.96094, 158.89063, 516.21094, 334, 514.03906, 325.89063, 514.03906, 342.10938, 440, 227, 418, 277.78906, 381.21094, 246, 379.03906, 237.89063, 409.89063, 279.96094, 379.03906, 254.10938, 233.78906, -82, 208.21094, -79, 104.96094, 333.89063, 102.78906, 342, 41.210938, 336, 39.039063, 327.89063, 254.21094, 230, 253.40625, 227, 260, 227, 292, 247, 292, 323, 483.78906, 334, 133.03906, 350.10938, 135.21094, 342, 216, 323, 485.96094, 325.89063, 175, 249.21094, 68, -61, 175.78906, -79, 192, -62.789063, 143, 36.789063, 183.89063, -64.96094, -36.789063, 254, -8, 183, -8, 259, -38.960938, 262.10938, -38.960938, 245.89063, -26.890625, 169.03906, -44.890625, 239.96094, -35, 171.21094, 143, 69.21094, 211.21094, 167, 8.7890625, 336, -20.960938, 340.89063, -18.789063, 155, -20.960938, 146.89063, 24, 151, 24, 183, -20.960938, 163.10938, 508.10938, 348.03906, 403.96094, 285.89063, 373.10938, 260.03906, 472, -61, 440, -9, 338.21094, -71, 336.03906, -79.109375, 152, 87, 152, 131, 94.03906, 136.10938, 96.21094, 128, 487.21094, 114, -8, -93, -8, -9, -72, -9, -60, -29, -49.039063, 146.89063, -72, 67, -40, 67, -40, 99, -43.109375, 140.96094, 36, -9, 36, -61, 177.96094, -70.890625, 600, -61, 600, -9, 336.03906, -62.890625, 420, -9, 612, 131, 612, 99, 644, 99, 664, 215, 644, 3, 696, 3, 696, 55, 664, 55, 484, 183, 485.03906, 122.109375, 484, 215, 479.10938, 128.03906, 471, 130.21094, 420, 183, 462.89063, 128.03906, 420, 87, 456.96094, 122.109375, 454.78906, 114, 388, 87, 388, 67, 420, 67, 216, -9, 216, 23, 184, 23, 159.21094, 53, 184, 87, 157.03906, 61.109375, 276.60938, 131, 280, 131, 280, 163, 276.03906, 133.10938, 270.10938, 139.03906, 312, 163, 312, 195, 344, 195, 344, 227, 696, 355, 696, 375, 644, 375, 612, 343, 56, 259, 56, 323, -44.890625, 268.03906, 132, 259, 182.78906, 307, 184.96094, 315.10938, -60, -93, -90.02344, -29, -91.74219, 375, 133.03906, 333.89063, -53, 237.78906, -43.109375, 169.03906, 262, 141.21094, 235.96094, -73.890625, 206.03906, -70.890625, 39.039063, 344.10938, 104.96094, 350.10938, 330.10938, -56.960938, 322, -54.789063, 313.89063, -56.960938, 307.96094, -62.890625, 247.39063, 131, 247.96094, 133.10938, 305.78906, -71, 238, 246.21094, 246.10938, 244.03906, 252.03906, 238.10938, 186.89063, 152.96094, -61.109375, 239.96094, -49.039063, 163.10938, 10.9609375, 327.89063, -26.890625, 334.96094, 401.78906, 294, 365, 262.21094, 151.10938, 38.960938, 157.03906, 44.890625, 200.10938, -64.96094, 241.89063, -67.96094, 250, -65.78906, 508.10938, 319.96094, 350.96094, 237.89063, 348.78906, 246, 209.03906, 158.89063, 373.10938, 231.96094, 151.10938, 67.03906, 190.89063, 321.03906, 127.109375, 327.96094, 119, 325.78906, 199, 323.21094, 330.10938, -85.03906, 110.890625, 327.96094, 33.109375, 321.96094, 33.109375, 350.03906, 110.890625, 356.03906, 185.10938, 360.96094, 258.10938, -67.96094, 426.10938, 308.03906, 500, 317.78906, 185.10938, 389.03906, 491.89063, 319.96094, 418, 310.21094, 253.89063, 139.03906, 127.109375, 356.03906, 177, 358.78906, -53, 270.21094, 25, 319.78906, 264.03906, -73.890625, 307.96094, -79.109375, 88.109375, 142.03906, 195, 150.78906, 65.96094, 119.890625, -26.890625, 140.96094, 71.890625, 113.96094, -67.03906, 245.89063, -51.210938, 155, 215.21094, 307, 213.03906, 315.10938, 207.10938, 321.03906, 16.890625, 321.96094, -35, 332.78906, -26.890625, 363.03906, 25, 352.21094, -60, 407, 356.89063, 260.03906, 403.96094, 302.10938, 203.10938, 152.96094, -43.109375, 334.96094, -61.109375, 268.03906, -49.039063, 340.89063, -67.03906, 262.10938, -51.210938, 349, -69.21094, 254, 409.89063, 308.03906, 350.96094, 254.10938, 119, 358.21094, 162.96094, 383.10938, 168.89063, 389.03906, 365, 229.78906, 356.89063, 231.96094, 168.89063, 360.96094, 162.96094, 366.89063, 160.78906, 375, 313.89063, -85.03906, 266.21094, -82, 177, 391.21094, -60, 375, -35, 365.21094, -43.109375, 363.03906, -49.039063, 357.10938, -35, 138.78906, 80, 111.78906, 80, 144.21094, 71.890625, 142.03906, 65.96094, 136.10938, 63.789063, 128, 94.03906, 119.890625, 88.109375, 113.96094)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4, 5), PackedInt32Array(6, 7, 8), PackedInt32Array(9, 10, 11), PackedInt32Array(12, 13, 14), PackedInt32Array(15, 16, 17), PackedInt32Array(18, 19, 20), PackedInt32Array(21, 22, 23), PackedInt32Array(24, 25, 26, 27, 28), PackedInt32Array(2, 29, 30, 31, 32, 3), PackedInt32Array(29, 2, 33, 34), PackedInt32Array(35, 36, 1, 0, 37), PackedInt32Array(38, 39, 40, 41), PackedInt32Array(42, 43, 44), PackedInt32Array(45, 46, 47), PackedInt32Array(48, 49, 50), PackedInt32Array(51, 52, 53, 54), PackedInt32Array(55, 56, 57, 58), PackedInt32Array(59, 60, 61), PackedInt32Array(62, 63, 64), PackedInt32Array(65, 66, 12), PackedInt32Array(67, 21, 23), PackedInt32Array(6, 8, 68), PackedInt32Array(18, 20, 69), PackedInt32Array(70, 9, 11), PackedInt32Array(71, 26, 25, 72), PackedInt32Array(73, 15, 17), PackedInt32Array(74, 75, 76, 23, 77), PackedInt32Array(78, 1, 36, 79), PackedInt32Array(79, 36, 80, 76), PackedInt32Array(12, 14, 81, 82), PackedInt32Array(35, 37, 83), PackedInt32Array(70, 11, 84, 85), PackedInt32Array(86, 85, 84), PackedInt32Array(4, 28, 87, 88), PackedInt32Array(89, 87, 28), PackedInt32Array(90, 35, 83, 91, 92, 93), PackedInt32Array(92, 91, 94, 95), PackedInt32Array(51, 54, 96, 97), PackedInt32Array(98, 99, 100, 101), PackedInt32Array(102, 103, 104, 105), PackedInt32Array(106, 107, 71, 108, 109, 110), PackedInt32Array(106, 111, 107), PackedInt32Array(62, 112, 65, 12, 82), PackedInt32Array(113, 48, 50, 114, 47), PackedInt32Array(115, 116, 45, 47, 117), PackedInt32Array(118, 119, 120, 121), PackedInt32Array(119, 118, 122), PackedInt32Array(123, 119, 122, 124, 125), PackedInt32Array(42, 44, 126), PackedInt32Array(6, 68, 127), PackedInt32Array(128, 39, 38, 129), PackedInt32Array(130, 131, 132, 133, 119), PackedInt32Array(134, 130, 119), PackedInt32Array(123, 134, 119), PackedInt32Array(135, 89, 28), PackedInt32Array(95, 94, 136, 137), PackedInt32Array(57, 138, 139, 140, 141), PackedInt32Array(142, 143, 144, 145, 42), PackedInt32Array(146, 67, 23, 76), PackedInt32Array(62, 64, 112), PackedInt32Array(147, 148, 149, 150), PackedInt32Array(151, 152, 153, 154, 155), PackedInt32Array(47, 156, 157, 113), PackedInt32Array(47, 114, 158), PackedInt32Array(47, 158, 117), PackedInt32Array(138, 159, 160, 74), PackedInt32Array(138, 74, 77), PackedInt32Array(138, 77, 139), PackedInt32Array(161, 140, 139, 162), PackedInt32Array(163, 164, 165, 166, 34), PackedInt32Array(167, 168, 169, 170), PackedInt32Array(165, 167, 170, 166), PackedInt32Array(163, 34, 33), PackedInt32Array(75, 163, 33, 76), PackedInt32Array(171, 172, 146, 76, 80, 173), PackedInt32Array(174, 172, 171), PackedInt32Array(175, 174, 171, 176), PackedInt32Array(177, 175, 176), PackedInt32Array(177, 176, 178, 179), PackedInt32Array(180, 179, 178, 18), PackedInt32Array(178, 181, 182, 183), PackedInt32Array(184, 185, 186), PackedInt32Array(187, 186, 188, 142, 189), PackedInt32Array(190, 191, 192, 193), PackedInt32Array(194, 193, 192), PackedInt32Array(192, 195, 196), PackedInt32Array(196, 197, 198), PackedInt32Array(31, 199, 200, 201), PackedInt32Array(31, 201, 32), PackedInt32Array(32, 202, 3), PackedInt32Array(121, 120, 203, 204, 205), PackedInt32Array(82, 206, 62), PackedInt32Array(82, 81, 207), PackedInt32Array(82, 207, 208), PackedInt32Array(150, 209, 147), PackedInt32Array(210, 150, 149), PackedInt32Array(211, 210, 149, 152), PackedInt32Array(110, 109, 212), PackedInt32Array(125, 124, 213, 214), PackedInt32Array(18, 69, 180), PackedInt32Array(139, 18, 178, 183), PackedInt32Array(139, 183, 162), PackedInt32Array(215, 194, 192), PackedInt32Array(97, 96, 216, 217), PackedInt32Array(218, 100, 99, 219), PackedInt32Array(220, 161, 162), PackedInt32Array(220, 162, 184, 221), PackedInt32Array(222, 221, 184), PackedInt32Array(223, 222, 184), PackedInt32Array(143, 224, 225), PackedInt32Array(226, 223, 184), PackedInt32Array(59, 61, 227), PackedInt32Array(105, 59, 227), PackedInt32Array(105, 227, 228), PackedInt32Array(105, 228, 229), PackedInt32Array(105, 229, 102), PackedInt32Array(230, 86, 84), PackedInt32Array(214, 213, 231, 232), PackedInt32Array(233, 128, 129, 234), PackedInt32Array(137, 136, 235, 236), PackedInt32Array(237, 116, 115), PackedInt32Array(238, 237, 115, 239, 240, 241), PackedInt32Array(4, 88, 242), PackedInt32Array(27, 135, 28), PackedInt32Array(198, 243, 244, 105, 104, 6, 196), PackedInt32Array(6, 127, 245), PackedInt32Array(90, 93, 246), PackedInt32Array(42, 126, 247), PackedInt32Array(82, 208, 248, 249, 250), PackedInt32Array(110, 212, 249, 251), PackedInt32Array(57, 141, 252), PackedInt32Array(217, 216, 240, 239), PackedInt32Array(253, 98, 101, 254, 204), PackedInt32Array(255, 218, 219, 256), PackedInt32Array(71, 72, 257), PackedInt32Array(187, 238, 241, 258, 186), PackedInt32Array(259, 5, 4, 260), PackedInt32Array(261, 24, 28), PackedInt32Array(262, 111, 106, 263), PackedInt32Array(143, 225, 264), PackedInt32Array(265, 108, 71, 266), PackedInt32Array(267, 205, 204, 254, 268), PackedInt32Array(269, 270, 226, 184, 258), PackedInt32Array(84, 271, 144, 143, 272, 230), PackedInt32Array(273, 132, 131, 274, 275), PackedInt32Array(232, 231, 276, 277), PackedInt32Array(278, 73, 17), PackedInt32Array(278, 17, 110), PackedInt32Array(279, 278, 110), PackedInt32Array(280, 279, 110), PackedInt32Array(264, 215, 192, 143), PackedInt32Array(281, 233, 234, 282, 267), PackedInt32Array(283, 41, 40, 284, 285), PackedInt32Array(286, 236, 235, 287, 106, 105), PackedInt32Array(143, 192, 196, 288), PackedInt32Array(251, 280, 110), PackedInt32Array(248, 251, 249), PackedInt32Array(204, 82, 250), PackedInt32Array(204, 250, 253), PackedInt32Array(267, 268, 281), PackedInt32Array(267, 282, 289, 290), PackedInt32Array(290, 289, 291, 292), PackedInt32Array(292, 291, 293, 211, 294), PackedInt32Array(4, 242, 260), PackedInt32Array(259, 260, 262, 263), PackedInt32Array(295, 263, 106), PackedInt32Array(287, 295, 106), PackedInt32Array(296, 286, 105), PackedInt32Array(244, 296, 105), PackedInt32Array(6, 245, 288, 196), PackedInt32Array(285, 284, 255, 256, 297, 298, 299), PackedInt32Array(90, 246, 300), PackedInt32Array(198, 90, 300), PackedInt32Array(198, 300, 301), PackedInt32Array(198, 301, 243), PackedInt32Array(71, 257, 266), PackedInt32Array(265, 266, 302), PackedInt32Array(265, 302, 303), PackedInt32Array(265, 303, 304), PackedInt32Array(265, 304, 298, 297), PackedInt32Array(57, 252, 58), PackedInt32Array(55, 58, 305), PackedInt32Array(55, 305, 270, 306), PackedInt32Array(269, 306, 270), PackedInt32Array(307, 261, 28), PackedInt32Array(307, 28, 285), PackedInt32Array(299, 307, 285), PackedInt32Array(283, 285, 308, 309), PackedInt32Array(310, 309, 308), PackedInt32Array(311, 310, 308, 211), PackedInt32Array(293, 311, 211), PackedInt32Array(294, 211, 152), PackedInt32Array(276, 294, 152, 277), PackedInt32Array(151, 277, 152), PackedInt32Array(312, 155, 154), PackedInt32Array(312, 154, 42, 313), PackedInt32Array(143, 288, 272), PackedInt32Array(314, 271, 84), PackedInt32Array(314, 84, 132), PackedInt32Array(315, 314, 132), PackedInt32Array(316, 315, 132), PackedInt32Array(317, 316, 132), PackedInt32Array(273, 317, 132), PackedInt32Array(275, 274, 312), PackedInt32Array(42, 247, 189, 142), PackedInt32Array(258, 184, 186), PackedInt32Array(42, 145, 318), PackedInt32Array(42, 318, 319), PackedInt32Array(42, 319, 313), PackedInt32Array(312, 313, 275)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-64, -100, 194, -110, 651, -98, 719, 4, 703, 379, 582, 439, -98, 433, -96, -33)])
+source_geometry_mode = 2
+agent_radius = 6.0
+
+[node name="World" type="Node2D" unique_id=32837850]
+y_sort_enabled = true
+position = Vector2(-4, 1)
+script = ExtResource("1_cdqbm")
+bat_scene = ExtResource("8_jsk3o")
+
+[node name="GroundLayer" type="Node2D" parent="." unique_id=254306876]
+z_index = -1000
+
+[node name="Parallax2D" type="Parallax2D" parent="GroundLayer" unique_id=1691174683]
+repeat_size = Vector2(320, 192)
+
+[node name="GrassBackground" type="TextureRect" parent="GroundLayer/Parallax2D" unique_id=374077577]
+offset_right = 320.0
+offset_bottom = 192.0
+texture = ExtResource("1_noarx")
+stretch_mode = 1
+
+[node name="DirtTileMapLayer" type="TileMapLayer" parent="GroundLayer" unique_id=676406791]
+tile_map_data = PackedByteArray("AAAKAAAAAAAAAAEAAAAKAAEAAAAEAAEAAAALAAEAAAACAAIAAAALAAAAAAACAAEAAAAKAAIAAAADAAEAAAAKAAMAAAADAAEAAAAKAAQAAAADAAEAAAAKAAUAAAAHAAMAAAAJAAUAAAAEAAAAAAAJAAYAAAADAAEAAAAJAAcAAAAHAAIAAAAIAAcAAAAAAAAAAAAIAAgAAAAGAAMAAAAHAAgAAAABAAMAAAAGAAgAAAAEAAMAAAAGAAcAAAAHAAAAAAAFAAcAAAAFAAMAAAAFAAYAAAACAAAAAAAEAAYAAAABAAAAAAAEAAcAAAABAAIAAAADAAcAAAABAAIAAAACAAcAAAAEAAEAAAACAAgAAAAHAAMAAAABAAgAAAAIAAAAAAABAAkAAAADAAEAAAABAAoAAAAHAAMAAAAAAAoAAAAEAAAAAAAAAAsAAAAHAAMAAAD//wsAAAABAAMAAAD+/wsAAAABAAMAAAD9/wsAAAAEAAAAAAD9/wwAAAADAAEAAAD9/w0AAAADAAEAAAD9/w4AAAAEAAMAAAD+/w4AAAAHAAAAAAADAAYAAAABAAAAAAACAAYAAAAAAAAAAAAJAAgAAAAFAAMAAAAKAAgAAAAGAAAAAAALAAgAAAABAAAAAAAMAAgAAAABAAAAAAANAAgAAAABAAAAAAAOAAgAAAACAAAAAAAOAAkAAAAJAAAAAAAPAAkAAAACAAAAAAAPAAoAAAAFAAMAAAAOAAoAAAAAAAIAAAAMAAkAAAABAAIAAAALAAkAAAABAAIAAAAKAAkAAAAAAAIAAAANAAkAAAABAAIAAAAQAAoAAAAHAAAAAAAQAAsAAAAEAAMAAAARAAsAAAAGAAAAAAASAAsAAAACAAAAAAASAAwAAAACAAEAAAARAAwAAAAAAAEAAAARAA0AAAAAAAEAAAASAA0AAAACAAEAAAARAA4AAAAAAAIAAAASAA4AAAAFAAMAAAATAA4AAAAGAAAAAAAUAA4AAAACAAAAAAAUAA8AAAACAAEAAAATAA8AAAAAAAEAAAATABAAAAAAAAEAAAAUABAAAAACAAEAAAAUABEAAAAFAAMAAAAVABEAAAAHAAAAAAAVABIAAAAEAAMAAAAWABIAAAAHAAAAAAAWABMAAAAEAAMAAAAXABMAAAABAAMAAAAYABMAAAAHAAAAAAAYABQAAAAEAAMA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AAABABEAAAABAAAAAAAAABEAAAAGAAAAAAD//xEAAAABAAMAAAACABEAAAACAAAAAAACABIAAAAFAAMAAAADABIAAAAHAAAAAAADABMAAAADAAEAAAADABQAAAADAAEAAAADABUAAAADAAEAAAADABYAAAAEAAMAAAAEABYAAAAHAAAAAAAEABcAAAAEAAMAAAAFABcAAAABAAMAAAAGABcAAAABAAMAAAAHABcAAAABAAMAAAAIABcAAAACAAMAAAAJABYAAAAAAAMAAAAKABYAAAAGAAMAAAALABYAAAABAAIAAAAMABYAAAAFAAMAAAANABYAAAABAAMAAAAMABUAAAACAAAAAAALABUAAAABAAAAAAAKABUAAAAEAAIAAAAKABQAAAAHAAAAAAAJABQAAAABAAMAAAAIABQAAAAEAAMAAAAIABMAAAADAAEAAAAIABIAAAADAAEAAAAIABEAAAAEAAAAAAAJABEAAAAHAAMAAAAJABAAAAADAAAAAAAOABYAAAABAAMAAAAPABYAAAABAAMAAAAQABYAAAAHAAAAAAAQABcAAAAEAAMAAAARABcAAAABAAMAAAASABcAAAABAAMAAAATABcAAAAGAAMAAAAUABcAAAAFAAMAAAAVABcAAAABAAMAAAAWABcAAAABAAMAAAAXABcAAAABAAMAAAATABYAAAAAAAEAAAAUABYAAAACAAEAAAAUABUAAAACAAEAAAAUABQAAAACAAAAAAATABQAAAAEAAIAAAATABMAAAAHAAAAAAASABMAAAAEAAMAAAASABIAAAADAAEAAAASABEAAAAEAAAAAAATABEAAAAGAAMAAAATABUAAAAAAAEAAAAYABcAAAABAAMAAAAZABcAAAABAAMAAAAaABcAAAAHAAMAAAAaABYAAAAEAAAAAAAbABYAAAABAAMAAAAcABYAAAAHAAAAAAAcABcAAAAEAAMAAAAdABcAAAABAAMAAAAeABcAAAABAAMAAAAfABcAAAABAAMAAAAgABcAAAABAAMAAAAhABcAAAAHAAMAAAAhABYAAAAEAAAAAAAiABYAAAAHAAMAAAAiABUAAAADAAEAAAAiABQAAAAEAAEAAAAjABQAAAACAAIAAAAjABMAAAAFAAAAAAAkABMAAAABAAMAAAAlABMAAAABAAMAAAAmABMAAAAHAAAAAAAmABQAAAADAAEAAAAmABUAAAAEAAMAAAAnABUAAAABAAMAAAAoABUAAAAHAAAAAAAoABYAAAAEAAMAAAApABYAAAABAAMAAAAqABYAAAABAAMAAAArABYAAAAHAAAAAAArABcAAAADAAIAAAAgABEAAAAHAAEAAAAgABIAAAAEAAMAAAAhABIAAAABAAMAAAAiABIAAAAHAAAAAAAiABMAAAAEAAIAAAApAAEAAAADAAEAAAApAAAAAAAHAAAAAAAoAAAAAAAAAAMAAAAlAP7/AAACAAMAAAAkAP7/AAABAAMAAAAjAP7/AAABAAMAAAAiAP7/AAABAAMAAAD+/w8AAAADAAEAAAD+/xAAAAADAAEAAAD+/xEAAAAEAAMAAAAAAAgAAAABAAMAAAD//wgAAAABAAMAAAD+/wgAAAABAAMAAAD9/wgAAAABAAMAAAD8/wgAAAABAAMAAAA=")
+tile_set = ExtResource("2_wc5p8")
+
+[node name="CliffTileMapLayer" type="TileMapLayer" parent="GroundLayer" unique_id=1696299686 groups=["navigation_polygon_source_geometry_group"]]
+tile_map_data = PackedByteArray("AAADAAcAAAAFAAEAAAACAAcAAAAGAAEAAAAEAAUAAAACAAAAAAADAAUAAAABAAAAAAACAAUAAAABAAAAAAAEAAcAAAACAAIAAAAEAAYAAAAFAAQAAAADAAYAAAABAAEAAAACAAYAAAABAAEAAAAFAAYAAAABAAMAAAAGAAYAAAAIAAAAAAAHAAYAAAACAAMAAAAGAAcAAAADAAEAAAALAAMAAAAFAAIAAAAKAAQAAAAGAAEAAAALAAUAAAAGAAEAAAAMAAUAAAACAAEAAAAMAAYAAAAFAAMAAAALAAYAAAAAAAIAAAAKAAUAAAAAAAIAAAALAAQAAAABAAEAAAAMAAMAAAACAAAAAAAMAAQAAAACAAEAAAALAAIAAAACAAEAAAAHAAAAAAAAAAAAAAAHAAEAAAAGAAIAAAAGAAEAAAAAAAAAAAAGAAIAAAAAAAEAAAAGAAMAAAAGAAMAAAAFAAMAAAAAAAMAAAAHAAMAAAABAAIAAAAHAAIAAAABAAEAAAAIAAIAAAABAAEAAAAAAAAAAAAIAAIAAAAAAAEAAAABAAEAAAAAAAIAAAABAAIAAAABAAIAAAABAAIAAAACAAIAAAABAAIAAAADAAIAAAACAAIAAAADAAEAAAACAAEAAAABAAAAAAABAAAAAAAJAAQAAAAAAAIAAAAJAAMAAAAGAAEAAAAIAAMAAAABAAIAAAABAAUAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAAcAAAAAAAIAAAABAAcAAAABAAIAAAABAAYAAAAGAAIAAAABAAEAAAABAAEAAAACAAEAAAABAAEAAAACAAAAAAABAAAAAAADAAAAAAACAAAAAAAIAAAAAAABAAAAAAAIAAEAAAABAAEAAAAJAAEAAAABAAEAAAAJAAAAAAABAAAAAAAKAAAAAAABAAAAAAAKAAEAAAABAAEAAAALAAEAAAAFAAEAAAAKAAIAAAABAAEAAAAKAAMAAAABAAEAAAAJAAIAAAABAAEAAAAGAAgAAAAEAAMAAAAHAAgAAAAGAAAAAAAIAAgAAAACAAAAAAAIAAkAAAACAAIAAAAHAAkAAAAAAAIAAAD8////AAAHAAIAAAD8/wAAAAACAAEAAAD8/wEAAAACAAEAAAD8/wIAAAACAAEAAAD8/wMAAAACAAEAAAD8/wQAAAACAAEAAAD8/wUAAAACAAEAAAD8/wYAAAACAAEAAAD8/wcAAAACAAEAAAD8/wgAAAACAAEAAAD8/wkAAAACAAEAAAD8/woAAAACAAEAAAD8/wsAAAAHAAEAAAD8/wwAAAAEAAIAAAD8/w0AAAAAAAIAAAD9/w0AAAAFAAMAAAD+/w0AAAABAAMAAAD//w0AAAABAAMAAAAAAA0AAAAGAAAAAAABAA0AAAABAAAAAAACAA0AAAABAAAAAAADAA0AAAABAAAAAAAEAA0AAAABAAAAAAAFAA0AAAABAAAAAAAGAA0AAAABAAAAAAAHAA0AAAABAAAAAAAIAA0AAAABAAAAAAAJAA0AAAABAAAAAAAKAA0AAAABAAAAAAALAA0AAAABAAAAAAAMAA0AAAABAAAAAAANAA0AAAABAAAAAAAOAA0AAAABAAAAAAAPAA0AAAABAAAAAAAQAA0AAAABAAAAAAARAA0AAAABAAAAAAASAA0AAAAGAAIAAAATAA0AAAABAAEAAAATAAwAAAAFAAIAAAASAAwAAAAAAAEAAAAUAA0AAAAFAAEAAAAUAAwAAAABAAAAAAAVAAwAAAABAAAAAAAWAAwAAAAJAAEAAAAWAAsAAAAAAAEAAAAWAAoAAAAGAAEAAAAVAAoAAAAAAAIAAAAVAAkAAAAAAAEAAAAVAAgAAAAAAAEAAAAVAAcAAAAGAAQAAAAVAAYAAAAAAAEAAAAVAAUAAAAAAAEAAAAVAAQAAAAAAAEAAAAVAAMAAAAAAAEAAAAVAAIAAAAAAAAAAAAWAAIAAAAHAAIAAAAWAAEAAAADAAEAAAAWAAAAAAADAAEAAAAWAP//AAAHAAAAAAAVAP//AAAFAAMAAAAVAP7/AAACAAAAAAAUAP7/AAAFAAIAAAAUAP3/AAACAAAAAAATAP3/AAAGAAAAAAASAP3/AAABAAMAAAARAP3/AAABAAMAAAAQAP3/AAABAAMAAAAPAP3/AAAEAAMAAAAPAPz/AAAHAAAAAAAOAPz/AAABAAMAAAANAPz/AAABAAMAAAAMAPz/AAABAAMAAAALAPz/AAABAAMAAAAKAPz/AAABAAMAAAAJAPz/AAABAAMAAAAIAPz/AAABAAMAAAAHAPz/AAABAAMAAAAGAPz/AAABAAMAAAAFAPz/AAABAAMAAAAEAPz/AAABAAMAAAADAPz/AAABAAMAAAACAPz/AAABAAMAAAABAPz/AAAFAAAAAAAAAPz/AAAGAAAAAAAAAP3/AAAEAAEAAAABAP3/AAACAAIAAAD///z/AAABAAMAAAD+//z/AAABAAMAAAD9//z/AAAFAAAAAAD8//z/AAAAAAAAAAD8//3/AAAAAAEAAAD9//3/AAACAAEAAAD9//7/AAACAAIAAAD8//7/AAAEAAEAAAD7////AAAAAAAAAAD7/wAAAAAAAAEAAAD7/wEAAAAGAAIAAAD6/wEAAAAAAAAAAAD6/wIAAAAAAAIAAAD7/wIAAAAGAAEAAAD7/wMAAAAAAAEAAAD7/wQAAAAGAAIAAAD6/wQAAAAAAAAAAAD6/wUAAAAAAAEAAAD6/wYAAAAAAAEAAAD6/wcAAAAAAAEAAAD6/wgAAAAAAAEAAAD7/wgAAAABAAEAAAD6/wkAAAAAAAEAAAD7/wkAAAABAAEAAAD7/woAAAAGAAEAAAD6/woAAAAAAAIAAAD7/wsAAAAAAAIAAAD7/wUAAAABAAEAAAD7/wYAAAABAAEAAAD7/wcAAAABAAEAAAAWAAMAAAACAAEAAAAWAAQAAAAFAAIAAAAXAAQAAAACAAAAAAAXAAUAAAACAAEAAAAXAAYAAAACAAEAAAAWAAYAAAABAAEAAAAWAAcAAAAFAAEAAAAXAAcAAAACAAIAAAAUAAcAAAAAAAMAAAAWAAgAAAACAAEAAAAWAAkAAAAFAAIAAAAXAAkAAAACAAAAAAAXAAoAAAACAAEAAAAXAAsAAAACAAEAAAAXAAwAAAACAAIAAAAWAA0AAAACAAIAAAAVAA0AAAABAAIAAAAUAA4AAAACAAIAAAATAA4AAAABAAIAAAASAA4AAAABAAIAAAARAA4AAAABAAIAAAAQAA4AAAABAAIAAAAPAA4AAAABAAIAAAAOAA4AAAABAAIAAAANAA4AAAABAAIAAAAMAA4AAAABAAIAAAALAA4AAAABAAIAAAAKAA4AAAABAAIAAAAJAA4AAAABAAIAAAAIAA4AAAABAAIAAAAHAA4AAAABAAIAAAAGAA4AAAABAAIAAAAFAA4AAAABAAIAAAAEAA4AAAABAAIAAAADAA4AAAABAAIAAAACAA4AAAABAAIAAAABAA4AAAABAAIAAAAAAA4AAAAAAAIAAAD9/wwAAAACAAAAAAAOAAAAAAAAAAAAAAAOAAEAAAAAAAEAAAAPAAEAAAACAAEAAAAPAAIAAAACAAIAAAAOAAIAAAAAAAIAAAAPAAAAAAACAAAAAAAMAAEAAAACAAIAAAAMAAAAAAACAAAAAAALAAAAAAABAAAAAAAPAAcAAAACAAMAAAAOAAcAAAAEAAMAAAAOAAYAAAAHAAAAAAANAAYAAAABAAMAAAARAAUAAAAAAAAAAAARAAYAAAAAAAIAAAASAAYAAAAHAAEAAAASAAUAAAACAAAAAAASAAcAAAADAAEAAAASAAgAAAAHAAMAAAD//wIAAAAAAAIAAAD//wEAAAAGAAEAAAD//wAAAAABAAAAAAD+/wAAAAAAAAAAAAD+/wEAAAAAAAIAAAASAAoAAAADAAAAAAASAAsAAAAEAAIAAAATAAsAAAACAAAAAAATAAAAAAAHAAIAAAASAAAAAAAAAAAAAAASAAEAAAAAAAEAAAATAAEAAAACAAEAAAASAAIAAAAEAAEAAAADAAgAAAACAAEAAAADAAkAAAACAAIAAAACAAkAAAAAAAIAAAACAAgAAAAAAAEAAAASAAMAAAAHAAMAAAATAAIAAAACAAIAAAAAAP//AAADAAEAAAAAAP7/AAADAAEAAAATAP//AAAEAAEAAAATAP7/AAAAAAEAAAAUAP//AAABAAIAAAAWAAUAAAABAAEAAAA=")
+tile_set = ExtResource("3_jsk3o")
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="." unique_id=1474807758]
+position = Vector2(2, 3)
+navigation_polygon = SubResource("NavigationPolygon_tereu")
+
+[node name="Player" parent="." unique_id=1578443967 instance=ExtResource("1_a202f")]
+position = Vector2(145, 129)
+
+[node name="SpawnPoints" type="Node2D" parent="." unique_id=257598635]
+
+[node name="Marker2D" type="Marker2D" parent="SpawnPoints" unique_id=1325339062]
+position = Vector2(-28, -52)
+
+[node name="Marker2D2" type="Marker2D" parent="SpawnPoints" unique_id=1736361406]
+position = Vector2(-74, 141)
+
+[node name="Marker2D3" type="Marker2D" parent="SpawnPoints" unique_id=492171657]
+position = Vector2(11, 290)
+
+[node name="Marker2D4" type="Marker2D" parent="SpawnPoints" unique_id=330743528]
+position = Vector2(246, 360)
+
+[node name="Marker2D5" type="Marker2D" parent="SpawnPoints" unique_id=518873506]
+position = Vector2(519, 261)
+
+[node name="Marker2D6" type="Marker2D" parent="SpawnPoints" unique_id=2098851423]
+position = Vector2(507, 142)
+
+[node name="Marker2D7" type="Marker2D" parent="SpawnPoints" unique_id=437846884]
+position = Vector2(249, 155)
+
+[node name="Marker2D8" type="Marker2D" parent="SpawnPoints" unique_id=536320484]
+position = Vector2(110, -6)
+
+[node name="Marker2D9" type="Marker2D" parent="SpawnPoints" unique_id=838346583]
+position = Vector2(623, 301)
+
+[node name="Marker2D10" type="Marker2D" parent="SpawnPoints" unique_id=1327653479]
+position = Vector2(107, 130)
+
+[node name="Marker2D11" type="Marker2D" parent="SpawnPoints" unique_id=2122432652]
+position = Vector2(5, 145)
+
+[node name="Marker2D12" type="Marker2D" parent="SpawnPoints" unique_id=361845515]
+position = Vector2(85, 379)
+
+[node name="Marker2D13" type="Marker2D" parent="SpawnPoints" unique_id=136227015]
+position = Vector2(395, 379)
+
+[node name="Marker2D14" type="Marker2D" parent="SpawnPoints" unique_id=2060377428]
+position = Vector2(445, 340)
+
+[node name="Marker2D15" type="Marker2D" parent="SpawnPoints" unique_id=2143571432]
+position = Vector2(326, 252)
+
+[node name="Marker2D16" type="Marker2D" parent="SpawnPoints" unique_id=731121834]
+position = Vector2(-84, 38)
+
+[node name="Timer" type="Timer" parent="." unique_id=528534182]
+wait_time = 4.0
+autostart = true
+
+[node name="Bush" parent="." unique_id=1553665900 instance=ExtResource("3_a0tk4")]
+position = Vector2(177, 236)
+
+[node name="Bush2" parent="." unique_id=255523334 instance=ExtResource("3_a0tk4")]
+position = Vector2(82, 131)
+
+[node name="Bush3" parent="." unique_id=1569837817 instance=ExtResource("3_a0tk4")]
+position = Vector2(145, 56)
+
+[node name="Bush4" parent="." unique_id=893850358 instance=ExtResource("3_a0tk4")]
+position = Vector2(73, 55)
+
+[node name="Bush5" parent="." unique_id=1190127458 instance=ExtResource("3_a0tk4")]
+position = Vector2(367, 249)
+
+[node name="Bush6" parent="." unique_id=557517361 instance=ExtResource("3_a0tk4")]
+position = Vector2(299, 74)
+
+[node name="Bush7" parent="." unique_id=426754290 instance=ExtResource("3_a0tk4")]
+position = Vector2(240, 233)
+
+[node name="Tree" parent="." unique_id=488853551 instance=ExtResource("4_r3fl7")]
+position = Vector2(138, 182)
+
+[node name="Tree2" parent="." unique_id=312174723 instance=ExtResource("4_r3fl7")]
+position = Vector2(264, 131)
+
+[node name="Tree3" parent="." unique_id=257681799 instance=ExtResource("4_r3fl7")]
+position = Vector2(197, 173)
+
+[node name="Grass" parent="." unique_id=833204097 instance=ExtResource("7_4arys")]
+position = Vector2(109, 104)
+
+[node name="Grass2" parent="." unique_id=516430671 instance=ExtResource("7_4arys")]
+position = Vector2(23, 104)
+
+[node name="Grass3" parent="." unique_id=878190474 instance=ExtResource("7_4arys")]
+position = Vector2(9, 119)
+
+[node name="Grass4" parent="." unique_id=1059835448 instance=ExtResource("7_4arys")]
+position = Vector2(25, 119)
+
+[node name="Grass5" parent="." unique_id=384138465 instance=ExtResource("7_4arys")]
+position = Vector2(9, 104)
+
+[node name="Grass6" parent="." unique_id=1452958439 instance=ExtResource("7_4arys")]
+position = Vector2(314, 201)
+
+[node name="Grass7" parent="." unique_id=1732752028 instance=ExtResource("7_4arys")]
+position = Vector2(330, 201)
+
+[node name="Grass8" parent="." unique_id=1799910974 instance=ExtResource("7_4arys")]
+position = Vector2(314, 217)
+
+[node name="Grass9" parent="." unique_id=1466237879 instance=ExtResource("7_4arys")]
+position = Vector2(330, 218)
+
+[node name="Grass10" parent="." unique_id=1815593824 instance=ExtResource("7_4arys")]
+position = Vector2(59, 139)
+
+[node name="Grass11" parent="." unique_id=2093549637 instance=ExtResource("7_4arys")]
+position = Vector2(42, 153)
+
+[node name="Grass12" parent="." unique_id=973828855 instance=ExtResource("7_4arys")]
+position = Vector2(60, 153)
+
+[node name="Grass13" parent="." unique_id=369499209 instance=ExtResource("7_4arys")]
+position = Vector2(184, 67)
+
+[node name="Grass14" parent="." unique_id=1489846958 instance=ExtResource("7_4arys")]
+position = Vector2(184, 82)
+
+[node name="Grass15" parent="." unique_id=596558781 instance=ExtResource("7_4arys")]
+position = Vector2(184, 51)
+
+[node name="BatEnemy" parent="." unique_id=1100117528 instance=ExtResource("8_jsk3o")]
+position = Vector2(70, 107)
+
+[node name="BatEnemy2" parent="." unique_id=1277040131 instance=ExtResource("8_jsk3o")]
+position = Vector2(168, 45)
+
+[node name="UI" type="CanvasLayer" parent="." unique_id=1231666677]
+
+[node name="Hearts UI" parent="UI" unique_id=83738811 instance=ExtResource("9_4arys")]
+offset_left = 2.0
+offset_top = 1.0
+offset_right = 17.0
+offset_bottom = 12.0
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1934504105]
+stream = ExtResource("10_6iypd")
+autoplay = true
+bus = &"Music"
+parameters/looping = true
+
+[node name="Pauser" parent="." unique_id=48497302 instance=ExtResource("11_tereu")]
+
+[node name="Grass16" parent="." unique_id=941966552 instance=ExtResource("7_4arys")]
+position = Vector2(76, 329)
+
+[node name="Grass17" parent="." unique_id=927142505 instance=ExtResource("7_4arys")]
+position = Vector2(92, 330)
+
+[node name="Grass18" parent="." unique_id=1218407975 instance=ExtResource("7_4arys")]
+position = Vector2(75, 342)
+
+[node name="Grass19" parent="." unique_id=1935152620 instance=ExtResource("7_4arys")]
+position = Vector2(90, 343)
+
+[node name="Grass20" parent="." unique_id=698097096 instance=ExtResource("7_4arys")]
+position = Vector2(89, 357)
+
+[node name="Grass21" parent="." unique_id=2023783946 instance=ExtResource("7_4arys")]
+position = Vector2(256, 271)
+
+[node name="Grass22" parent="." unique_id=184207376 instance=ExtResource("7_4arys")]
+position = Vector2(255, 284)
+
+[node name="Grass23" parent="." unique_id=2034986116 instance=ExtResource("7_4arys")]
+position = Vector2(269, 278)
+
+[node name="Grass24" parent="." unique_id=1945233612 instance=ExtResource("7_4arys")]
+position = Vector2(267, 327)
+
+[node name="Grass25" parent="." unique_id=168947690 instance=ExtResource("7_4arys")]
+position = Vector2(281, 327)
+
+[node name="Grass26" parent="." unique_id=1009155587 instance=ExtResource("7_4arys")]
+position = Vector2(251, 326)
+
+[node name="Grass27" parent="." unique_id=2108585062 instance=ExtResource("7_4arys")]
+position = Vector2(362, 330)
+
+[node name="Grass28" parent="." unique_id=1360168880 instance=ExtResource("7_4arys")]
+position = Vector2(375, 330)
+
+[node name="Grass29" parent="." unique_id=2026274685 instance=ExtResource("7_4arys")]
+position = Vector2(389, 344)
+
+[node name="Grass30" parent="." unique_id=636684304 instance=ExtResource("7_4arys")]
+position = Vector2(504, 297)
+
+[node name="Grass31" parent="." unique_id=1553651995 instance=ExtResource("7_4arys")]
+position = Vector2(488, 297)
+
+[node name="Grass32" parent="." unique_id=680230564 instance=ExtResource("7_4arys")]
+position = Vector2(447, 144)
+
+[node name="Grass33" parent="." unique_id=1343648951 instance=ExtResource("7_4arys")]
+position = Vector2(431, 145)
+
+[node name="Grass34" parent="." unique_id=714361580 instance=ExtResource("7_4arys")]
+position = Vector2(432, 160)
+
+[node name="Grass35" parent="." unique_id=1957274422 instance=ExtResource("7_4arys")]
+position = Vector2(446, 160)
+
+[node name="Grass36" parent="." unique_id=1875033529 instance=ExtResource("7_4arys")]
+position = Vector2(-65, 229)
+
+[node name="Grass37" parent="." unique_id=1243183029 instance=ExtResource("7_4arys")]
+position = Vector2(-69, 243)
+
+[node name="Grass38" parent="." unique_id=1765282531 instance=ExtResource("7_4arys")]
+position = Vector2(-63, 215)
+
+[node name="Grass39" parent="." unique_id=193251633 instance=ExtResource("7_4arys")]
+position = Vector2(51, 182)
+
+[node name="Grass40" parent="." unique_id=689973828 instance=ExtResource("7_4arys")]
+position = Vector2(66, 181)
+
+[node name="Grass41" parent="." unique_id=1197914847 instance=ExtResource("7_4arys")]
+position = Vector2(56, 196)
+
+[node name="Grass42" parent="." unique_id=22193146 instance=ExtResource("7_4arys")]
+position = Vector2(-47, 91)
+
+[node name="Grass43" parent="." unique_id=1559102683 instance=ExtResource("7_4arys")]
+position = Vector2(-35, 103)
+
+[node name="Grass44" parent="." unique_id=1205153212 instance=ExtResource("7_4arys")]
+position = Vector2(-47, 106)
+
+[node name="Grass45" parent="." unique_id=1258022813 instance=ExtResource("7_4arys")]
+position = Vector2(128, -75)
+
+[node name="Grass46" parent="." unique_id=1483663023 instance=ExtResource("7_4arys")]
+position = Vector2(402, -72)
+
+[node name="Grass47" parent="." unique_id=1185594156 instance=ExtResource("7_4arys")]
+position = Vector2(267, 21)
+
+[node name="Grass48" parent="." unique_id=2061124294 instance=ExtResource("7_4arys")]
+position = Vector2(23, 45)
+
+[node name="Grass49" parent="." unique_id=317252078 instance=ExtResource("7_4arys")]
+position = Vector2(23, 33)
+
+[node name="Grass50" parent="." unique_id=1240216782 instance=ExtResource("7_4arys")]
+position = Vector2(624, 164)
+
+[node name="Grass51" parent="." unique_id=735673614 instance=ExtResource("7_4arys")]
+position = Vector2(624, 178)
+
+[node name="Grass52" parent="." unique_id=878510735 instance=ExtResource("7_4arys")]
+position = Vector2(623, 192)
+
+[node name="Grass53" parent="." unique_id=1750057058 instance=ExtResource("7_4arys")]
+position = Vector2(623, 207)
+
+[node name="Grass54" parent="." unique_id=998975702 instance=ExtResource("7_4arys")]
+position = Vector2(617, 16)
+
+[node name="Grass55" parent="." unique_id=562102183 instance=ExtResource("7_4arys")]
+position = Vector2(605, 12)
+
+[node name="Grass56" parent="." unique_id=2033268114 instance=ExtResource("7_4arys")]
+position = Vector2(609, 30)
+
+[node name="Grass57" parent="." unique_id=2066155421 instance=ExtResource("7_4arys")]
+position = Vector2(400, 16)
+
+[node name="Grass58" parent="." unique_id=1816900950 instance=ExtResource("7_4arys")]
+position = Vector2(481, 40)
+
+[node name="Grass59" parent="." unique_id=1248404973 instance=ExtResource("7_4arys")]
+position = Vector2(483, 56)
+
+[node name="Tree4" parent="." unique_id=1312623220 instance=ExtResource("4_r3fl7")]
+position = Vector2(420, 300)
+
+[node name="Tree5" parent="." unique_id=1855674378 instance=ExtResource("4_r3fl7")]
+position = Vector2(201, 313)
+
+[node name="Tree6" parent="." unique_id=795163953 instance=ExtResource("4_r3fl7")]
+position = Vector2(502, 340)
+
+[node name="Tree7" parent="." unique_id=1429239411 instance=ExtResource("4_r3fl7")]
+position = Vector2(194, -73)
+
+[node name="Tree8" parent="." unique_id=946883795 instance=ExtResource("4_r3fl7")]
+position = Vector2(324, -65)
+
+[node name="Tree9" parent="." unique_id=346470868 instance=ExtResource("4_r3fl7")]
+position = Vector2(-28, 27)
+
+[node name="Tree10" parent="." unique_id=210594695 instance=ExtResource("4_r3fl7")]
+position = Vector2(602, 62)
+
+[node name="Tree11" parent="." unique_id=659957389 instance=ExtResource("4_r3fl7")]
+position = Vector2(388, 166)
+
+[node name="Tree12" parent="." unique_id=1723803088 instance=ExtResource("4_r3fl7")]
+position = Vector2(351, 39)
+
+[node name="Tree13" parent="." unique_id=1052960753 instance=ExtResource("4_r3fl7")]
+position = Vector2(89, 288)
+
+[node name="Tree14" parent="." unique_id=1523870090 instance=ExtResource("4_r3fl7")]
+position = Vector2(473, 120)
+
+[node name="Bush8" parent="." unique_id=1411449396 instance=ExtResource("3_a0tk4")]
+position = Vector2(97, 212)
+
+[node name="Bush9" parent="." unique_id=399147110 instance=ExtResource("3_a0tk4")]
+position = Vector2(252, -79)
+
+[node name="Bush10" parent="." unique_id=1848880222 instance=ExtResource("3_a0tk4")]
+position = Vector2(-33, 158)
+
+[node name="Bush11" parent="." unique_id=1532539454 instance=ExtResource("3_a0tk4")]
+position = Vector2(-51, 257)
+
+[node name="Bush12" parent="." unique_id=730565143 instance=ExtResource("3_a0tk4")]
+position = Vector2(-33, 352)
+
+[node name="Grass60" parent="." unique_id=709232098 instance=ExtResource("7_4arys")]
+position = Vector2(-41, 390)
+
+[node name="Grass61" parent="." unique_id=295748082 instance=ExtResource("7_4arys")]
+position = Vector2(-26, 389)
+
+[node name="Grass62" parent="." unique_id=610837191 instance=ExtResource("7_4arys")]
+position = Vector2(-41, 403)
+
+[node name="Grass63" parent="." unique_id=478137744 instance=ExtResource("7_4arys")]
+position = Vector2(-26, 404)
+
+[node name="Bush13" parent="." unique_id=1940736216 instance=ExtResource("3_a0tk4")]
+position = Vector2(179, 378)
+
+[node name="Tree15" parent="." unique_id=126947216 instance=ExtResource("4_r3fl7")]
+position = Vector2(121, 348)
+
+[node name="Tree16" parent="." unique_id=204396442 instance=ExtResource("4_r3fl7")]
+position = Vector2(27, 342)
+
+[node name="Tree17" parent="." unique_id=280647709 instance=ExtResource("4_r3fl7")]
+position = Vector2(600, 369)
+
+[node name="Bush14" parent="." unique_id=201980116 instance=ExtResource("3_a0tk4")]
+position = Vector2(580, 185)
+
+[node name="Grass64" parent="." unique_id=435468951 instance=ExtResource("7_4arys")]
+position = Vector2(114, -75)
+
+[node name="Grass65" parent="." unique_id=1403603430 instance=ExtResource("7_4arys")]
+position = Vector2(114, -61)
+
+[node name="Grass66" parent="." unique_id=1949915187 instance=ExtResource("7_4arys")]
+position = Vector2(131, -60)
+
+[node name="Grass67" parent="." unique_id=1949026637 instance=ExtResource("7_4arys")]
+position = Vector2(122, -46)
+
+[node name="Grass68" parent="." unique_id=190563375 instance=ExtResource("7_4arys")]
+position = Vector2(145, -74)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1752706312]
+
+[node name="ScoreLabel" type="Label" parent="CanvasLayer" unique_id=829666365]
+offset_left = 253.0
+offset_top = -1.0
+offset_right = 332.0
+offset_bottom = 22.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 12
+text = "Score: 0"
+
+[node name="TimeLabel" type="Label" parent="CanvasLayer" unique_id=2127459469]
+visible = false
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Time: 0"
+
+[node name="GameOverLabel" type="Label" parent="CanvasLayer" unique_id=505795838]
+visible = false
+offset_left = 104.0
+offset_top = 56.0
+offset_right = 196.0
+offset_bottom = 79.0
+theme_override_font_sizes/font_size = 13
+text = "GAME OVER"
+
+[node name="FinalScoreLabel" type="Label" parent="CanvasLayer" unique_id=398977824]
+visible = false
+offset_left = 120.0
+offset_top = 88.0
+offset_right = 181.0
+offset_bottom = 111.0
+theme_override_font_sizes/font_size = 12
+text = "Score: 0"
+
+[node name="FinalTimeLabel" type="Label" parent="CanvasLayer" unique_id=1966430698]
+visible = false
+offset_left = 88.0
+offset_top = 72.0
+offset_right = 190.0
+offset_bottom = 95.0
+theme_override_font_sizes/font_size = 12
+text = "FinalTimeLabel"
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
