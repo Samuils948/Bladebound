@@ -10,7 +10,7 @@ Bladebound is a small 2D action RPG survival game made in Godot 4. Fight waves o
 * Character and enemy animations
 * Background music during gameplay
 * Sound effects for attacks, rolls, hits, and other actions
-* Endless waves of enemies
+* Waves of enemies
 * Score system
 * Survival timer
 * Game Over screen
@@ -34,3 +34,4 @@ Defeat bats to earn points and survive for as long as possible. More enemies wil
 
 * Godot 4
 * GDScript
+* Godot Resource
